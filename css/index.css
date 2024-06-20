@@ -1,0 +1,233 @@
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body, h1, p, ul {
+  margin: 0;
+}
+ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+button {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+}
+
+
+body {
+  min-block-size: 100vh;
+  min-block-size: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  font-family: 'Overpass', sans-serif;
+  background-color: var(--very-dark-blue);
+}
+
+:root {
+  --orange: hsl(25, 97%, 53%);
+  --white: hsl(0, 0%, 100%);
+  --light-grey: hsl(217, 12%, 63%);
+  --dark-blue: hsl(215, 23%, 14%);
+  --very-dark-blue: hsl(216, 12%, 8%);
+  --very-light-grey: hsl(215, 18%, 19%);
+}
+
+.card {
+  margin-top: 6.1rem;
+  padding: 1.5rem 1.4rem 2rem 1.5rem;
+  inline-size: clamp(20.45rem, 86vw, 25.8rem);
+  font-size: clamp(.875rem, .5rem + 1.6vw, .9375rem);
+  background-color: var(--dark-blue);
+  border-radius: .8rem;
+  color: var(--white);
+}
+.card-star {
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
+  display: grid;
+  place-items: center;
+  background-color: var(--very-light-grey);
+  border-radius: 50%;
+}
+.card-body {
+  margin-top: 1.4rem;
+
+  & h1 {
+    font-size: clamp(1.49rem, 1rem + 2vw, 1.72rem);
+  }
+  & p {
+    margin-top: .8rem;
+    line-height: 1.55;
+    color: var(--light-grey);
+  }
+}
+.ratings {
+  margin-top: 1.45rem;
+  display: flex;
+  justify-content: space-between;
+
+  & li {
+    font-weight: 700;
+    position: relative;
+    & label {
+      display: block;
+      inline-size: 2.6rem;
+      block-size: 2.6rem;
+      background-color: var(--very-light-grey);
+      border-radius: 50%;
+      color: var(--light-grey);
+      cursor: pointer;
+      line-height: 2.6rem;
+      text-align: center;
+      transition: background-color .3s ease, color .3s ease;
+      &:hover {
+        background-color: var(--white);
+        color: var(--very-dark-blue);
+      }
+    }
+    
+    & input {
+      position: absolute;
+      left: -100vw;
+      opacity: 0;
+      &:checked + label {
+        background-color: var(--orange);
+        color: var(--very-dark-blue);
+      }
+    }
+  }
+}
+
+.thank-card-header {
+  padding-top: .6rem;
+  text-align: center;
+  & img {
+    max-inline-size: 9rem;
+  }
+  & p {
+    margin: 1.2rem auto 0;
+    padding: .48rem .8rem .2rem;
+    inline-size: max-content;
+    background-color: var(--very-light-grey);
+    border-radius: 3rem;
+    color: var(--orange);
+    line-height: 1.5;
+  }
+}
+.thank-card-body {
+  margin-top: 1.9rem;
+  text-align: center;
+  & h2 {
+    margin-bottom: 0;
+    font-size: clamp(1.49rem, 1rem + 2vw, 1.72rem);
+  }
+  & p {
+    margin-top: .8rem;
+    padding-bottom: .15rem;
+    line-height: 1.58;
+    color: var(--light-grey);
+  }
+}
+
+.card-footer {
+  margin-top: 1.5rem;
+  & button {
+    padding-block: .87rem;
+    inline-size: 100%;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: var(--orange);
+    border-radius: 3rem;
+    letter-spacing: 2px;
+    color: var(--very-dark-blue);
+    cursor: pointer;
+    transition: background-color .3s ease;
+    &:disabled {
+      opacity: .7;
+      cursor: no-drop;
+    }
+    &:hover {
+      background-color: var(--white);
+    }
+  }
+}
+
+.attribution {
+  padding-bottom: 2rem;
+  inline-size: 100%;
+  font-size: .85rem;
+  font-weight: 400;
+  color: var(--white);
+  text-align: center;
+  & a {
+    font-weight: 700;
+    color: var(--orange);
+    text-underline-offset: .2rem;
+  }
+}
+
+@media (width >= 30.25rem) {
+  .card {
+    margin-top: 6.4rem;
+    padding: 2rem;
+    border-radius: 2rem;
+  }
+  .card-star {
+    inline-size: 3rem;
+    block-size: 3rem;
+  }
+  .card-body {
+    margin-top: 2.3rem;
+    padding-left: .05rem;
+    padding-right: .45rem;
+    & p {
+      margin-top: .65rem;
+      line-height: 1.6;
+    }
+  }
+  .ratings {
+    margin-top: 1.35rem;
+    & li {
+      & label {
+        inline-size: 3.2rem;
+        block-size: 3.2rem;
+        line-height: 3.2rem;
+      }
+    }
+    }
+  .card-footer {
+    margin-top: 2rem;
+    padding-right: .45rem;
+    & button {
+      padding-bottom: .75rem;
+    }
+  }
+  .thank-card-header {
+    padding-top: .8rem;
+    & img {
+      max-inline-size: unset;
+      padding-right: .5rem;
+    }
+    & p {
+      margin-top: 1.65rem;
+      padding-top: .4rem;
+    }
+  }
+  .thank-card-body {
+    margin-top: 2.45rem;
+    & p {
+      margin-top: .6rem;
+      padding-right: .5rem;
+      padding-bottom: .7rem;
+      line-height: 1.6;
+    }
+  }
+}
