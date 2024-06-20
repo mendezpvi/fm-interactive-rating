@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/icon/favicon-32x32.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="32x32" href="./assets/icon/favicon-32x32.png">
+
+  <link rel="stylesheet" href="./css/font.css">
+  <link rel="stylesheet" href="./css/index.css">
+  
+  <title>Interactive rating component</title>
+</head>
+<body>
+  <main>
+    <article class="card" id="card">
+      <header>
+        <div class="card-star">
+          <img src="./assets/icon/icon-star.svg" alt="" aria-hidden="true">
+        </div>
+      </header>
+      <div class="card-body">
+        <h1>How did we do?</h1>
+        <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+        <ul class="ratings" id="ratings">
+          <li>
+            <input type="radio" name="rating" id="one" value="1">
+            <label for="one">1</label>
+          </li>
+          <li>
+            <input type="radio" name="rating" id="two" value="2">
+            <label for="two">2</label>
+          </li>
+          <li>
+            <input type="radio" name="rating" id="three" value="3">
+            <label for="three">3</label>
+          </li>
+          <li>
+            <input type="radio" name="rating" id="four" value="4">
+            <label for="four">4</label>
+          </li>
+          <li>
+            <input type="radio" name="rating" id="five" value="5">
+            <label for="five">5</label>
+          </li>
+        </ul>
+      </div>
+      <footer class="card-footer">
+        <button type="button" id="submit-btn" disabled>submit</button>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="attribution">
+    <small>
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noreferrer">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/mendezpvi/fm-interactive-rating" target="_blank" rel="noreferrer">VIMP</a>
+    </small>
+  </footer>
+
+  <script type="module" src="./js/index.js"></script>
+</body>
+</html>
