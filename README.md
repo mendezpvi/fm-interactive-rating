@@ -41,7 +41,7 @@ Users should be able to:
 
 [Challenges overcome](https://github.com/mendezpvi/frontend-mentor-challenges) 👀
 
-<!-- [Solution in Frontend Mentor](https://your-live-site-url.com) 👀 -->
+[Solution in Frontend Mentor](https://www.frontendmentor.io/solutions/interactive-rating-component-Nmp9im1c0f) 👀
 
 ## *Built with* :hammer_and_pick:
 
