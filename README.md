@@ -31,9 +31,11 @@ Users should be able to:
 
 ![Mobile](./assets/screenshot/mobile.avif)
 
-![Mobile](./assets/screenshot/desktop-1.avif)
+![Desktop-1](./assets/screenshot/desktop-1.avif)
 
-![Mobile](./assets/screenshot/desktop-2.avif)
+![Desktop-2](./assets/screenshot/desktop-2.avif)
+
+![Desktop-2](./assets/screenshot/desktop-3.avif)
 
 ## *Links* :link:
 
@@ -49,9 +51,7 @@ Users should be able to:
 
 ✅ CSS custom properties
 
-✅ CSS nesting
-
-✅ Flexbox
+✅ Grid CSS
 
 ✅ Vanilla JavaScript
 

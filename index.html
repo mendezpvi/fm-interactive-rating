@@ -33,47 +33,48 @@
 </head>
 <body>
   <main>
-    <article class="card" id="card">
-      <header>
-        <div class="card-star">
-          <img src="./assets/icon/icon-star.svg" alt="" aria-hidden="true">
-        </div>
-      </header>
-      <div class="card-body">
-        <h1>How did we do?</h1>
-        <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
-        <ul class="ratings" id="ratings">
-          <li>
-            <input type="radio" name="rating" id="one" value="1">
-            <label for="one">1</label>
-          </li>
-          <li>
-            <input type="radio" name="rating" id="two" value="2">
-            <label for="two">2</label>
-          </li>
-          <li>
-            <input type="radio" name="rating" id="three" value="3">
-            <label for="three">3</label>
-          </li>
-          <li>
-            <input type="radio" name="rating" id="four" value="4">
-            <label for="four">4</label>
-          </li>
-          <li>
-            <input type="radio" name="rating" id="five" value="5">
-            <label for="five">5</label>
-          </li>
-        </ul>
+    <form action="#" class="rating-form" id="rating-form">
+      <div class="form-logo">
+        <img src="./assets/icon/icon-star.svg" alt="" aria-hidden="true">
       </div>
-      <footer class="card-footer">
-        <button type="button" id="submit-btn" disabled>submit</button>
-      </footer>
-    </article>
+      <h1 class="form-ttl">How did we do?</h1>
+      <p class="form-desc">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+      <fieldset class="radios-wrapper">
+        <div>
+          <input type="radio" name="ratings" value="1" class="sr-only" id="rating-1">
+          <label class="label" for="rating-1">1</label>
+        </div>
+        <div>
+          <input type="radio" name="ratings" value="2" class="sr-only" id="rating-2">
+          <label class="label" for="rating-2">2</label>
+        </div>
+        <div>
+          <input type="radio" name="ratings" value="3" class="sr-only" id="rating-3">
+          <label class="label" for="rating-3">3</label>
+        </div>
+        <div>
+          <input type="radio" name="ratings" value="4" class="sr-only" id="rating-4">
+          <label class="label" for="rating-4">4</label>
+        </div>
+        <div>
+          <input type="radio" name="ratings" value="5" class="sr-only" id="rating-5">
+          <label class="label" for="rating-5">5</label>
+        </div>
+      </fieldset>
+      <button type="submit" class="submit-btn" id="submit-btn" disabled>submit</button>
+    </form>
+
+    <div class="thanks-box" id="thanks-box">
+      <img src="./assets/image/illustration-thank-you.svg" alt="" class="box-illus">
+      <p class="box-result" id="box-result"></p>
+      <h2 class="box-ttl">Thank you!</h2>
+      <p class="box-desc">We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!</p>
+    </div>
   </main>
 
   <footer class="attribution">
     <small>
-      Challenge by <a href="https://www.frontendmentor.io/challenges" target="_blank" rel="noreferrer">Frontend Mentor</a> - Coded by <a href="https://github.com/mendezpvi/fm-interactive-rating" target="_blank" rel="noreferrer">VIMP</a>
+      Challenge by <a class="attribution-cta" href="https://www.frontendmentor.io/challenges" target="_blank" rel="noreferrer">Frontend Mentor</a> - Coded by <a class="attribution-cta" href="https://github.com/mendezpvi/fm-interactive-rating" target="_blank" rel="noreferrer">VIMP</a>
     </small>
   </footer>
 

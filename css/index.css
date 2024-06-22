@@ -22,17 +22,17 @@ button {
 body {
   min-block-size: 100vh;
   min-block-size: 100svh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  place-items: center;
   font-family: 'Overpass', sans-serif;
   background-color: var(--very-dark-blue);
+  line-height: 1.55;
 }
 
 :root {
   --orange: hsl(25, 97%, 53%);
+  --light-orange: hsl(25, 100%, 69%);
   --white: hsl(0, 0%, 100%);
   --light-grey: hsl(217, 12%, 63%);
   --dark-blue: hsl(215, 23%, 14%);
@@ -40,194 +40,186 @@ body {
   --very-light-grey: hsl(215, 18%, 19%);
 }
 
-.card {
-  margin-top: 6.1rem;
+/* Layout */
+.rating-form,
+.thanks-box {
+  margin-top: 3.7rem;
   padding: 1.5rem 1.4rem 2rem 1.5rem;
   inline-size: clamp(20.45rem, 86vw, 25.8rem);
-  font-size: clamp(.875rem, .5rem + 1.6vw, .9375rem);
   background-color: var(--dark-blue);
   border-radius: .8rem;
+  border: none;
+}
+.thanks-box {
+  display: none;
+  text-align: center;
+  cursor: pointer;
+}
+.radios-wrapper {
+  margin: 0;
+  padding: 0;
+  margin-top: 1.45rem;
+  display: flex;
+  justify-content: space-between;
+  border: none;
+}
+.label {
+  display: inline-block;
+  inline-size: 2.6rem;
+  block-size: 2.6rem;
+  font-weight: 700;
+  background-color: var(--very-light-grey);
+  border-radius: 50%;
+  color: var(--light-grey);
+  cursor: pointer;
+  line-height: 2.6rem;
+  text-align: center;
+  transition: background-color .3s ease-in-out, color .3s ease-in-out;
+}
+.sr-only {
+  margin: -1px;
+  padding: 0;
+  height: 1px;
+  width: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  overflow: hidden;
+  position: absolute;
+}
+.attribution {
+  padding-block: 1.2rem;
+  text-align: center;
+}
+
+/* Typography*/
+.form-ttl,
+.box-ttl {
+  margin-bottom: .55rem;
+  font-size: clamp(1.49rem, 1rem + 2vw, 1.72rem);
   color: var(--white);
 }
-.card-star {
+.form-desc,
+.box-desc {
+  font-size: clamp(.875rem, .5rem + 1.6vw, .9375rem);
+  color: var(--light-grey);
+  line-height: 1.58;
+}
+.box-result {
+  margin: 1rem auto 1.7rem;
+  padding: .4rem .8rem .2rem;
+  inline-size: max-content;
+  font-size: clamp(.875rem, .5rem + 1.6vw, .9375rem);
+  background-color: var(--very-light-grey);
+  border-radius: 2rem;
+  color: var(--light-orange);
+  opacity: .9;
+}
+.attribution {
+  font-size: .85rem;
+  font-weight: 500;
+  color: var(--white);
+}
+.attribution-cta {
+  font-weight: 700;
+  color: var(--light-orange);
+  text-underline-offset: .25rem;
+  text-decoration-thickness: .15rem;
+}
+
+/* Button */
+.submit-btn {
+  margin-top: 1.45rem;
+  padding-block: .78rem;
+  inline-size: 100%;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: var(--orange);
+  border-radius: 3rem;
+  letter-spacing: 2px;
+  color: var(--very-dark-blue);
+  cursor: pointer;
+  transition: background-color .3s ease-in-out, transform .3s ease-in-out;
+}
+
+/* Images */
+.form-logo {
   inline-size: 2.5rem;
   block-size: 2.5rem;
+  margin-bottom: 1.2rem;
   display: grid;
   place-items: center;
   background-color: var(--very-light-grey);
   border-radius: 50%;
 }
-.card-body {
-  margin-top: 1.4rem;
-
-  & h1 {
-    font-size: clamp(1.49rem, 1rem + 2vw, 1.72rem);
-  }
-  & p {
-    margin-top: .8rem;
-    line-height: 1.55;
-    color: var(--light-grey);
-  }
-}
-.ratings {
-  margin-top: 1.45rem;
-  display: flex;
-  justify-content: space-between;
-
-  & li {
-    font-weight: 700;
-    position: relative;
-    & label {
-      display: block;
-      inline-size: 2.6rem;
-      block-size: 2.6rem;
-      background-color: var(--very-light-grey);
-      border-radius: 50%;
-      color: var(--light-grey);
-      cursor: pointer;
-      line-height: 2.6rem;
-      text-align: center;
-      transition: background-color .3s ease, color .3s ease;
-      &:hover {
-        background-color: var(--white);
-        color: var(--very-dark-blue);
-      }
-    }
-    
-    & input {
-      position: absolute;
-      left: -100vw;
-      opacity: 0;
-      &:checked + label {
-        background-color: var(--orange);
-        color: var(--very-dark-blue);
-      }
-    }
-  }
+.box-illus {
+  margin-top: .59rem;
+  max-inline-size: 9rem
 }
 
-.thank-card-header {
-  padding-top: .6rem;
-  text-align: center;
-  & img {
-    max-inline-size: 9rem;
-  }
-  & p {
-    margin: 1.2rem auto 0;
-    padding: .48rem .8rem .2rem;
-    inline-size: max-content;
-    background-color: var(--very-light-grey);
-    border-radius: 3rem;
-    color: var(--orange);
-    line-height: 1.5;
-  }
-}
-.thank-card-body {
-  margin-top: 1.9rem;
-  text-align: center;
-  & h2 {
-    margin-bottom: 0;
-    font-size: clamp(1.49rem, 1rem + 2vw, 1.72rem);
-  }
-  & p {
-    margin-top: .8rem;
-    padding-bottom: .15rem;
-    line-height: 1.58;
-    color: var(--light-grey);
-  }
-}
-
-.card-footer {
-  margin-top: 1.5rem;
-  & button {
-    padding-block: .87rem;
-    inline-size: 100%;
-    font-weight: 700;
-    text-transform: uppercase;
-    background-color: var(--orange);
-    border-radius: 3rem;
-    letter-spacing: 2px;
-    color: var(--very-dark-blue);
-    cursor: pointer;
-    transition: background-color .3s ease;
-    &:disabled {
-      opacity: .7;
-      cursor: no-drop;
-    }
-    &:hover {
-      background-color: var(--white);
-    }
-  }
-}
-
-.attribution {
-  padding-bottom: 2rem;
-  inline-size: 100%;
-  font-size: .85rem;
-  font-weight: 400;
-  color: var(--white);
-  text-align: center;
-  & a {
-    font-weight: 700;
-    color: var(--orange);
-    text-underline-offset: .2rem;
-  }
-}
 
 @media (width >= 30.25rem) {
-  .card {
-    margin-top: 6.4rem;
-    padding: 2rem;
+  .rating-form,
+  .thanks-box {
+    padding: 2.04rem 2.45rem 2.04rem 2.05rem;
     border-radius: 2rem;
   }
-  .card-star {
+  .form-logo {
+    margin-bottom: 2.1rem;
     inline-size: 3rem;
     block-size: 3rem;
   }
-  .card-body {
-    margin-top: 2.3rem;
-    padding-left: .05rem;
-    padding-right: .45rem;
-    & p {
-      margin-top: .65rem;
-      line-height: 1.6;
-    }
+  .form-ttl {
+    margin-bottom: .3rem;
   }
-  .ratings {
-    margin-top: 1.35rem;
-    & li {
-      & label {
-        inline-size: 3.2rem;
-        block-size: 3.2rem;
-        line-height: 3.2rem;
-      }
-    }
-    }
-  .card-footer {
+  .form-desc,
+  .box-desc {
+    line-height: 1.6;
+  }
+  .radios-wrapper {
+    margin-top: 1.4rem;
+  }
+  .label {
+    inline-size: 3.18rem;
+    block-size: 3.18rem;
+    line-height: 3.18rem;
+  }
+  .submit-btn {
     margin-top: 2rem;
-    padding-right: .45rem;
-    & button {
-      padding-bottom: .75rem;
-    }
   }
-  .thank-card-header {
-    padding-top: .8rem;
-    & img {
-      max-inline-size: unset;
-      padding-right: .5rem;
-    }
-    & p {
-      margin-top: 1.65rem;
-      padding-top: .4rem;
-    }
+
+  .thanks-box {
+    padding-bottom: 2.7rem;
   }
-  .thank-card-body {
-    margin-top: 2.45rem;
-    & p {
-      margin-top: .6rem;
-      padding-right: .5rem;
-      padding-bottom: .7rem;
-      line-height: 1.6;
-    }
+  .box-illus {
+    margin-top: .77rem;
+    max-inline-size: unset;
   }
+  .box-result {
+    margin: 1.45rem auto 2.2rem;
+    padding: .4rem 1.2rem .18rem;
+  }
+  .box-ttl {
+    margin-bottom: .35rem;
+  }
+}
+
+/* States */
+.submit-btn:disabled {
+  cursor: not-allowed;
+  background-color: var(--light-orange);
+}
+
+@media (hover:hover) {
+  .label:hover {
+    background-color: var(--white);
+    color: var(--very-dark-blue);
+  }
+  .attribution-cta:hover {
+    text-decoration: none;
+  }
+}
+
+input[type="radio"]:checked + label {
+  background-color: var(--orange);
+  color: var(--very-dark-blue);
 }
